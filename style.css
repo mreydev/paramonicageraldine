@@ -1,21 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
 #card {
-   height:500px;
-   width:800px;
-   margin:5em auto;
-   position: fixed;
+  height: 500px;
+  width: 800px;
+  margin: 5em auto;
+  position: fixed;
   top: -15px;
-   left: 25%;
-   display:flex;
-   visibility:hidden;
+  left: 25%;
+  display: flex;
+  visibility: hidden;
 }
+
+/* Estilos para dispositivos mÃ³viles */
+@media only screen and (max-width: 600px) {
+  #card {
+    width: 90%; /* Reducir el ancho para dispositivos mÃ³viles */
+    height: auto; /* Permitir que la altura se ajuste automÃ¡ticamente */
+    margin: 2em auto; /* Ajustar el margen */
+    position: static; /* Cambiar la posiciÃ³n a estÃ¡tica para que no sea fija */
+    visibility: none; /* Hacer que el elemento sea visible */
+    top: 50px;
+ 
+  }
+  .side.side.one {
+    display: none; 
+  }
+  #card p {
+    padding-left: 0 !important; /* Eliminar el relleno a la izquierda en dispositivos mÃ³viles */
+    padding-right: 0 !important; /* Eliminar el relleno a la derecha en dispositivos mÃ³viles */
+    font-size: 1.3em !important;
+  }
+  
+    .valentines-day {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+}
+
+
 #card h2 {
-   font-size:3em;
+   font-size:2em;
    margin:0;
    color:red;
    text-align: center;
 }
+
+
 #card p {
    font-size: 1.5em;
    text-align: justify;
@@ -28,13 +61,19 @@
    background:#eee;
    height:550px;
    width:400px;
-/*    border:1px solid red; */
+
    padding:10px;
 }
 .side.one {
    width:320px;
    transform:skew(10deg,20deg);
    background:linear-gradient(90deg, #fff, #fff 40%, #ddd);
+   display: flex; /* Utiliza flexbox para centrar el corazÃ³n verticalmente */
+   justify-content: center; /* Centra horizontalmente el contenido */
+   align-items: center; /* Centra verticalmente el contenido */
+   transform: skew(10deg, 20deg);
+   position: relative;
+   overflow: hidden;
 }
 .side.two {
    transform:skew(10deg,-15deg);
@@ -168,6 +207,83 @@ body {
  .valentines-day:hover .text {
    transform: translateY(-50px);
  }
+ 
+ 
+
+.side.one .fa-heart {
+  font-size: 8em;
+  color: red;
+  animation: pulseHeart 1s ease-in-out infinite alternate;
+  cursor: default;
+}
+
+@keyframes pulseHeart {
+  0% {
+     transform: scale(1);
+  }
+  100% {
+     transform: scale(1.2);
+  }
+}
+
+
+.made-with-love {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 15PX; /* Cambiado de "bottom: 10px;" a "top: 0;" */
+  text-align: center;
+  font-size: 10px;
+  z-index: 9999;
+  font-family: arial;
+  color: #e06ae0;
+  font-weight: 600;
+}
+.made-with-love i {
+  font-style: normal;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #c74f2b;
+  text-decoration: none;
+
+  
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+.made-with-love .dribble img {
+  max-width: 100%;
+  width: 26px;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+}
+
+.made-with-love a {
+  font-weight: bold; /* AÃ±adiendo negrita solo a los enlaces */
+}
+
+/* Estilos para dispositivos mÃ³viles */
+@media screen and (max-width: 600px) {
+  #card {
+      width: 90%;
+      max-width: 90%;
+      margin: 2em auto;
+  }
+  
+  .side {
+      width: 90%;
+      max-width: 90%;
+      margin: 0 auto;
+  }
+
+  .text {
+      font-size: 1em; /* Ajuste del tamaÃ±o de fuente */
+  }
+}
  
  
 
